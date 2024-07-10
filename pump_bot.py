@@ -39,8 +39,11 @@ def send_pump_transaction():
         print(response.json())
 
 def main():
-    while True: 
-        send_pump_transaction()
+    while True:
+        try:
+            send_pump_transaction()
+        except Exception as e:
+            print(f"An error occurred: {e}")
         time.sleep(2)  # sleep for 2 seconds
 
 main()
